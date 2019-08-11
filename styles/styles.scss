@@ -60,3 +60,31 @@ a{
         font-size: 16px;
     }
 }
+.navigation-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    border-top: 1px solid #f8f8f8;
+    .navigation-item{
+        a{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            font-size: 7px;
+            font-weight: 300;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            color: #081c24;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+}
