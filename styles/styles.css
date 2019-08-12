@@ -69,28 +69,47 @@ a:hover {
 .navigation-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 0px;
+  top: 75px;
   text-align: center;
   width: 100%;
   position: fixed;
   left: 0;
-  top: 50px;
+  border-top: 1px solid #f8f8f8;
+}
+.navigation-list .navigation-item {
+  display: flex;
+  flex-direction: column;
+  width: 95px;
+  margin-top: 75px;
   border-top: 1px solid #f8f8f8;
 }
 .navigation-list .navigation-item a {
   width: 100%;
+  font-size: 10px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  font-size: 7px;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #081c24;
+  color: #999;
   position: relative;
   cursor: pointer;
+}
+.navigation-list .navigation-item a:hover {
+  color: #081c24;
+}
+.navigation-list .navigation-item a .far, .navigation-list .navigation-item a .fas, .navigation-list .navigation-item a .fab {
+  position: absolute;
+  margin-top: -45px;
+  font-size: 16px;
+}
+.navigation-list .navigation-item a span {
+  position: absolute;
+  margin-top: -20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
