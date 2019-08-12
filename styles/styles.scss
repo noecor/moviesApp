@@ -16,7 +16,11 @@ a{
     }
 }
 .menu{
-    box-sizing: border-box; 
+    position: fixed;
+    display: flex;
+    background-color: #fff;
+    top: 0px;
+    width: 100%;
 }
 .navigation{
     display: flex;
@@ -70,6 +74,9 @@ a{
     position: fixed;
     left: 0;
     border-top: 1px solid #f8f8f8;
+    position: fixed;
+    background-color: #fff;
+    width: 95px;
     .navigation-item{
         display: flex;
         flex-direction: column;
@@ -103,5 +110,10 @@ a{
                 margin-top: -20px;
             }
         }
+    }
+    figure{
+        background-color: #f8f8f8;
+        background-repeat: no-repeat;
+
     }
 }

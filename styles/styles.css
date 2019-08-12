@@ -18,7 +18,11 @@ a:hover {
 }
 
 .menu {
-  box-sizing: border-box;
+  position: fixed;
+  display: flex;
+  background-color: #fff;
+  top: 0px;
+  width: 100%;
 }
 
 .navigation {
@@ -76,6 +80,9 @@ a:hover {
   position: fixed;
   left: 0;
   border-top: 1px solid #f8f8f8;
+  position: fixed;
+  background-color: #fff;
+  width: 95px;
 }
 .navigation-list .navigation-item {
   display: flex;
@@ -110,6 +117,10 @@ a:hover {
 .navigation-list .navigation-item a span {
   position: absolute;
   margin-top: -20px;
+}
+.navigation-list figure {
+  background-color: #f8f8f8;
+  background-repeat: no-repeat;
 }
 
 /*# sourceMappingURL=styles.css.map */
