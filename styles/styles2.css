@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #999;
+}
+
+a {
+  color: #999;
+  text-decoration: none;
+  font-size: 16px;
+}
+a:hover {
+  color: #081c24;
+  display: inline-block;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  height: 455px;
+  width: 95px;
+}
+nav .logo {
+  display: flex;
+  background-color: #081c24;
+  width: 95px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+}
+nav .logo:hover {
+  display: flex;
+  width: 95px;
+  height: 75px;
+  align-items: center;
+  justify-content: center;
+}
+nav .logo img {
+  width: 45px;
+  height: 40px;
+}
+
+.navigation-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0px;
+  top: 75px;
+  text-align: center;
+  left: 0;
+  border-top: 1px solid #f8f8f8;
+  position: fixed;
+  background-color: #fff;
+  width: 95px;
+}
+.navigation-list .navigation-item {
+  display: flex;
+  flex-direction: column;
+  width: 95px;
+  margin-top: 95px;
+  border-top: 1px solid #f8f8f8;
+}
+.navigation-list .navigation-item a {
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #999;
+  position: relative;
+  cursor: pointer;
+}
+.navigation-list .navigation-item a:hover {
+  color: #081c24;
+}
+.navigation-list .navigation-item a .far, .navigation-list .navigation-item a .fas, .navigation-list .navigation-item a .fab {
+  position: absolute;
+  margin-top: -45px;
+  font-size: 16px;
+}
+.navigation-list .navigation-item a span {
+  position: absolute;
+  margin-top: -20px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  right: 0px;
+  top: 0;
+  left: 95px;
+  background: #fff;
+  z-index: 5;
+}
+.placeholder .search {
+  width: 18px;
+  height: 18px;
+  padding-left: 50px;
+  margin-top: 30px;
+}
+.placeholder input {
+  width: 95%;
+  padding-left: 10px;
+  outline: 0px;
+  font-size: 16px;
+  border: none;
+}
+
+.container {
+  width: 93.3%;
+  margin-left: 95px;
+  margin-top: 75px;
+  width: calc(100% - 95px);
+}
+.container .header {
+  width: 100%;
+}
+.container .header h1 {
+  position: absolute;
+  z-index: 4;
+  margin: 0 auto;
+  left: 7%;
+  right: 0;
+  top: 37%;
+  text-align: center;
+  font-size: 28px;
+  color: #081c24;
+}
+.container .header .banner {
+  background: url(../images/assets/batman.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  opacity: 0.3;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  justify-content: center;
+  width: 100%;
+  margin-top: 75px;
+}
+
+/*# sourceMappingURL=styles2.css.map */
