@@ -154,4 +154,34 @@ nav{
 
 }
 
+.content{
+    padding: 30px;
+.movies-category{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    line-height: 10px;
+    h2{
+        margin: 0;
+        font-size: 18px;
+        color: #081c24;
+        font-weight: 300;
+    }
+    a{
+        right: 0;
+        font-size: 12px;
+        letter-spacing: .5px;
+        margin-top: 5px;
+        .fa-arrow-right{
+            font-size: 8px;
+            line-height: 2px;
+            font-weight: 600;
+        }
+    }
 }
+}
+
+}
+
+

@@ -151,5 +151,32 @@ nav .logo img {
   width: 100%;
   margin-top: 75px;
 }
+.container .content {
+  padding: 30px;
+}
+.container .content .movies-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  line-height: 10px;
+}
+.container .content .movies-category h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #081c24;
+  font-weight: 300;
+}
+.container .content .movies-category a {
+  right: 0;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  margin-top: 5px;
+}
+.container .content .movies-category a .fa-arrow-right {
+  font-size: 8px;
+  line-height: 2px;
+  font-weight: 600;
+}
 
 /*# sourceMappingURL=styles2.css.map */
