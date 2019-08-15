@@ -178,5 +178,26 @@ nav .logo img {
   line-height: 2px;
   font-weight: 600;
 }
+.container .content .movies {
+  display: flex;
+  flex-direction: row;
+}
+.container .content .movies ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+  margin-top: 0px;
+}
+.container .content .movies ul li {
+  padding: 30px;
+}
+.container .content .movies ul li figure {
+  margin: 0;
+}
+.container .content .movies ul li figure img {
+  width: 170px;
+  height: 256px;
+}
 
 /*# sourceMappingURL=styles2.css.map */
