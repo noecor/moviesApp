@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 body {
   margin: 0;
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   font-size: 16px;
   color: #999;
@@ -12,6 +12,7 @@ a {
   text-decoration: none;
   font-size: 16px;
 }
+
 a:hover {
   color: #081c24;
   display: inline-block;
@@ -19,6 +20,8 @@ a:hover {
 
 .menu {
   position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #fff;
   top: 0px;
@@ -26,43 +29,69 @@ a:hover {
 }
 
 .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 75px;
 }
 
 .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #081c24;
   width: 95px;
   height: 75px;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .logo:hover {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 95px;
   height: 75px;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .logo img {
   width: 45px;
   height: 40px;
 }
 
 .placeholder {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   position: fixed;
   margin-top: 25px;
 }
+
 .placeholder .search {
   width: 18px;
   height: 18px;
   padding-left: 150px;
 }
+
 .placeholder input {
   width: 95%;
   padding-left: 10px;
@@ -84,36 +113,53 @@ a:hover {
   background-color: #fff;
   width: 95px;
 }
+
 .navigation-list .navigation-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 95px;
   margin-top: 75px;
   border-top: 1px solid #f8f8f8;
 }
+
 .navigation-list .navigation-item a {
   width: 100%;
   font-size: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-weight: 300;
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: .5px;
   color: #999;
   position: relative;
   cursor: pointer;
 }
+
 .navigation-list .navigation-item a:hover {
   color: #081c24;
 }
+
 .navigation-list .navigation-item a .far, .navigation-list .navigation-item a .fas, .navigation-list .navigation-item a .fab {
   position: absolute;
   margin-top: -45px;
   font-size: 16px;
 }
+
 .navigation-list .navigation-item a span {
   position: absolute;
   margin-top: -20px;
@@ -126,6 +172,7 @@ a:hover {
   margin-left: 95px;
   position: relative;
 }
+
 .main .main-bg {
   background-color: #f8f8f8;
   width: 100%;
@@ -135,14 +182,20 @@ a:hover {
   position: relative;
   background-color: #081c24;
 }
+
 .main .main-bg img {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-
 /*# sourceMappingURL=styles.css.map */
