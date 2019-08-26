@@ -7,10 +7,10 @@ const url = `https://image.tmdb.org/t/p/original`;
 const body = document.querySelector('body');
 
 //Modal?
+const createModal =()=>
 fetch("https://api.themoviedb.org/3/movie/550?api_key=3631da5fba4115a4ce320e971a2fdadb")
     .then(response => response.json())
     .then(movie => {
-        console.log(movie);
         const div = document.createElement('div');
 
         const style = () => div.classList.add('modal');
@@ -27,7 +27,7 @@ fetch("https://api.themoviedb.org/3/movie/550?api_key=3631da5fba4115a4ce320e971a
         <div class="modalData"></div>
         <div class="containerModalData">
             <div class="modalPoster">
-                <img src="${url}${movie.poster_path}"/>
+                <img src="${url}${movie.poster_path}" width=300px/>
             </div>
             <div class="modalDataMovie">
                 <h4>${movie.title}</h4>
