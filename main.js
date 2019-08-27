@@ -53,13 +53,16 @@ const openModal = id =>{
 
             let search = document.getElementById('search');
             search.style.display = "none";
+            let mainText = document.getElementById('mainText');
+            mainText.style.display = "none";
+
 
             const contenedor = document.createElement('div');
             contenedor.innerHTML = `
             <div class="modal" id="modal">
             <div class="spinner"></div>
             <div class="contenedorModal noVisible">
-            <div class="modalEncabezado" style="background-image: url(${url}${movie.backdrop_path})" width="100px"></div>
+            <div class="modalEncabezado" style="background-image: url(${url}${movie.backdrop_path})" width="200px"></div>
             <div class="modalInformacion"></div>
             <div class="contenedorModalInfo">
                 <div class="modalPoster">
@@ -103,6 +106,8 @@ const closeModal = () =>{
     contenedor.remove('modal');
     let search = document.getElementById('search');
     search.style.display = "flex";
+    let mainText = document.getElementById('mainText');
+    mainText.style.display = "block";
 }
 
 //función para esconder elementos.
