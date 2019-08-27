@@ -98,15 +98,16 @@ body{
         box-sizing: border-box;
     }
     .close{
-        width: 40px;
-        height: 40px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        color: white;
+        z-index: 21;
+        display: block;
         position: absolute;
         top: 0;
-        right: 0;
+        right: 10px;
+        background: transparent;
+        width: 20px;
+        height: 20px;
+        transition:.5s ease;
         cursor: pointer;
     }
     .displayNone{
@@ -114,9 +115,6 @@ body{
     }
     ul{
         display: inline;
-    }
-    .results{
-        display: block;
     }
 a{
     color: #999;
@@ -153,8 +151,6 @@ nav{
         }
     }
 }
-
-
 .navigation-list{
     list-style: none;
     padding: 0;
@@ -201,7 +197,6 @@ nav{
         }
     }
 }
-
 .placeholder{
     display: flex;
     flex-direction: row;
@@ -226,15 +221,19 @@ nav{
         font-size: 16px;
         border: none;
     }
+    .results{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-left: 35px;
+        margin-top: 50px;
 }
-
+}
 .container{
     width: 93.3%;
     margin-left: 95px;
     margin-top: 75px;
     width: calc(100% - 95px);
-    //padding-left: 95px;
-
     .header{
         width:100%;
         h1{
@@ -245,7 +244,6 @@ nav{
             right: 0;
             top: 37%;
             text-align: center;
-            //width: 55%;
             font-size: 28px;
             color: $dark;
         }
@@ -264,9 +262,7 @@ nav{
         width: 100%;
         margin-top: 75px;
     }
-
 }
-
 .content{
     padding: 30px;
 .movies-category{
@@ -296,24 +292,33 @@ nav{
 .movies{
     display: flex;
     flex-direction: row;
-    ul{
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        padding-left: 0px;
-        margin-top: 0px;
         li{
             padding: 30px;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0px;
+            margin-top: 0px;
         figure{
             margin: 0;
-        img{
+        .thumb{
             width: 170px;
             height: 256px;
+            margin-bottom:16px;
+            float: left; 
+            } 
+            &:hover{
+                transform: scale(1.03) translateZ(0);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                box-shadow: 2px 3px 24px 3px rgba(201,199,201,1);            
             }
+        }
     }
     }
-    }
 }
 }
 }
-}
+
+
+
+

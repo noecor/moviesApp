@@ -148,24 +148,17 @@ body .moreInfo {
 }
 
 body .close {
-  width: 40px;
-  height: 40px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  color: white;
+  z-index: 21;
+  display: block;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10px;
+  background: transparent;
+  width: 20px;
+  height: 20px;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
   cursor: pointer;
 }
 
@@ -175,10 +168,6 @@ body .displayNone {
 
 body ul {
   display: inline;
-}
-
-body .results {
-  display: block;
 }
 
 body a {
@@ -333,6 +322,19 @@ body .placeholder input {
   border: none;
 }
 
+body .placeholder .results {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 35px;
+  margin-top: 50px;
+}
+
 body .container {
   width: 93.3%;
   margin-left: 95px;
@@ -427,7 +429,8 @@ body .container .content .movies {
           flex-direction: row;
 }
 
-body .container .content .movies ul {
+body .container .content .movies li {
+  padding: 30px;
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -438,16 +441,25 @@ body .container .content .movies ul {
   margin-top: 0px;
 }
 
-body .container .content .movies ul li {
-  padding: 30px;
-}
-
-body .container .content .movies ul li figure {
+body .container .content .movies li figure {
   margin: 0;
 }
 
-body .container .content .movies ul li figure img {
+body .container .content .movies li figure .thumb {
   width: 170px;
   height: 256px;
+  margin-bottom: 16px;
+  float: left;
+}
+
+body .container .content .movies li figure:hover {
+  -webkit-transform: scale(1.03) translateZ(0);
+          transform: scale(1.03) translateZ(0);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-box-shadow: 2px 3px 24px 3px #c9c7c9;
+          box-shadow: 2px 3px 24px 3px #c9c7c9;
 }
 /*# sourceMappingURL=styles.css.map */
