@@ -14,10 +14,10 @@
         <nav>
             <a href="#" class="logo"><img src="images/assets/logo.svg"></a>
         <ul class="navigation-list">
-            <li class="navigation-item"><a href="#"><i class="far fa-star"></i><span>POPULAR</span></a></li>
-            <li class="navigation-item"><a href="#"><i class="fas fa-arrow-up"></i><span>TOP RATED</span></a></li>
-            <li class="navigation-item"><a href="#"><i class="far fa-calendar-alt"></i><span>UPCOMING</span></a></li>
-            <li class="navigation-item"><a href="#"><i class="far fa-play-circle"></i><span>NOW PLAYING</span></a></li>
+            <li class="navigation-item"><a href="#" onclick="searchCategory('popular')"><i class="far fa-star"></i><span>POPULAR</span></a></li>
+            <li class="navigation-item"><a href="#" onclick="searchCategory('top_rated')"><i class="fas fa-arrow-up"></i><span>TOP RATED</span></a></li>
+            <li class="navigation-item"><a href="#" onclick="searchCategory('upcoming')"><i class="far fa-calendar-alt"></i><span>UPCOMING</span></a></li>
+            <li class="navigation-item"><a href="#" onclick="searchCategory('now_playing')"><i class="far fa-play-circle"></i><span>NOW PLAYING</span></a></li>
         </ul>
     </nav>
     <div class="placeholder">
@@ -31,17 +31,13 @@
             </div>
         </div>
         <div class="content">
-            <div class="movies-category">
-                <h2>Popular Movies</h2> 
+            <div class="movies-category" id="categories-results">
+                <h2 id="title">Popular Movies</h2> 
                 <a href="#">View All <i class="fas fa-arrow-right"></i></a> 
             </div>
-            <div class="movies" id="popular">
+            <div class="movies" id="movies">
                 <ul>
-                    <li><a href="#" onclick="createModal()"><figure><img src="images/assets/pelicula.jpg"></figure><p>Titulo película</p></a></li>
-                    <li><a href="#" onclick="createModal()"><figure><img src="images/assets/pelicula.jpg"></figure><p>Titulo película</p></a></li>
-                    <li><a href="#" onclick="createModal()"><figure><img src="images/assets/pelicula.jpg"></figure><p>Titulo película</p></a></li>
-                    <li><a href="#" onclick="createModal()"><figure><img src="images/assets/pelicula.jpg"></figure><p>Titulo película</p></a></li>
-                    <li><a href="#" onclick="createModal()"><figure><img src="images/assets/pelicula.jpg"></figure><p>Titulo película</p></a></li>
+                    
                 </ul>
             </div>
 

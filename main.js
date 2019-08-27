@@ -1,13 +1,56 @@
 console.log('Hola');
 const apiKey = `3631da5fba4115a4ce320e971a2fdadb`;
 const page = 1;
-//const peliculaId = ;
+//const movieId
+//const movieTitle
 //const searchText = ;
 const url = `https://image.tmdb.org/t/p/original`;
 const body = document.querySelector('body');
 
+
 //Modal?
-const createModal =()=>
+
+//const createModal =()=>
+ 
+const searchCategory = (category) => {
+    let title = document.getElementById("title");
+    switch (category) {
+        case 'popular':
+            title.textContent = 'Popular Movies';
+            break;
+        case 'top_rated':
+            title.textContent = 'Top Rated';
+            break;
+        case 'upcoming':
+            title.textContent = 'Upcoming';
+            break;
+        case 'now_playing':
+            title.textContent = 'Now Playing';
+            break;
+    }
+    fetch(`https://api.themoviedb.org/3/movie/${category}?api_key=${apiKey}`)
+        .then((res) => res.json())            
+		.then((res) => printCategoryResults(res.results));
+};
+
+const printCategoryResults = (movies) => {
+    console.log('se ejecutó')
+    let container = document.getElementById('movies');
+	container.innerHTML = '';
+
+	movies.forEach((mov) => {
+		let movie = document.createElement('a');
+        movie.innerText = mov.title;
+        movie.innerHTML = `<li class="pelis">
+            <div class="imagen" onclick="crearModal(${mov.id})"><img src="${url}${mov.poster_path}" width="80px"/></div>
+            <div class="tituloPeli"  onclick="verModal(${mov.id})">${mov.title}</div>
+            </li>`;
+        container.appendChild(movie);
+        console.log(mov.title);
+	});
+};
+
+/*
 fetch("https://api.themoviedb.org/3/movie/550?api_key=3631da5fba4115a4ce320e971a2fdadb")
     .then(response => response.json())
     .then(movie => {
@@ -59,21 +102,44 @@ fetch("https://api.themoviedb.org/3/movie/550?api_key=3631da5fba4115a4ce320e971a
        
     })
 
+*/
+/*
+const createModal = movie =>
+    
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}`)
+    .then(res => res.json())
+    .then(res => {
+    console.log (movieId = `${movie.results[0].id}`)
+}
+*/
+async function ada(){
+let j=0;
+await fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`)
+    .then(res => res.json())
+    .then(movie => {
+        for (let i=0; i<20; i++){
+            
+            console.log(movie.results[i].id);
+            console.log(movie.results[i].title);
+
+        }
+    })
+}
 // categoria Popular
-let contenido = document.querySelector('#popular');
-const popular = fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
-    .then(response => response.json())
-    .then(data => {
+//let contenido = document.querySelector('#popular');
+//const popular = fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`)
+  //  .then(response => response.json())
+    //.then(data => {
         //let div = div.createDocument('div')
-        console.log(data);
-        popular.innerHTML = `${data}`;
+        //console.log(data);
+        //popular.innerHTML = `${data}`;
         //let poster = movie.backdrop_path;
         //console.log(poster)
     //     div.innerHTML =                 
     //     `<div class="modalPoster">
     //     <img src="${dire}${data.poster_path}"/>
     // </div>`
-    })
+    //})
 
 /*
     let contenido = document.querySelector('#contenido')
@@ -91,20 +157,20 @@ let traer = () => {
 const topRated = fetch (`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 // categoría Upcoming
 const upcoming = fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
   
 // categoría Now Playing
 const nowPlaying = fetch (`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 
 
@@ -114,28 +180,28 @@ const nowPlaying = fetch (`https://api.themoviedb.org/3/movie/now_playing?api_ke
 const popularList = fetch (`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${page}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 
 // si hicimos click en la categoria Top Rated, las peliculas a mostrar la sacamos de:
 const topList = fetch (`https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=${page}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 
 // si hicimos click en la categoria Upcoming, las peliculas a mostrar la sacamos de:
 const upcomingList = fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&page=${page}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 
 // si hicimos click en la categoria Now Playing, las peliculas a mostrar la sacamos de:
 const nowPlayingList = fetch (`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${page}`)
     .then(response => response.json())
     .then(res => {
-        console.log(res);
+        //console.log(res);
     })
 
 /*/ si hicimos una búsqueda por palabra clave, las peliculas a mostrar la sacamos de:
