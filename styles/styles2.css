@@ -42,6 +42,10 @@ nav .logo img {
   width: 45px;
   height: 40px;
 }
+nav .logo img:hover {
+  transform: scale(1.05) translateZ(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
 
 .navigation-list {
   list-style: none;
@@ -71,7 +75,6 @@ nav .logo img {
   justify-content: center;
   font-weight: 300;
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #999;
   position: relative;
@@ -101,6 +104,13 @@ nav .logo img {
   left: 95px;
   background: #fff;
   z-index: 5;
+}
+.placeholder .results {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  margin-top: 50px;
 }
 .placeholder .search {
   width: 18px;
@@ -152,13 +162,17 @@ nav .logo img {
   margin-top: 75px;
 }
 .container .content {
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
 }
 .container .content .movies-category {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 30px;
+  padding-top: 30px;
   line-height: 10px;
 }
 .container .content .movies-category h2 {
@@ -167,16 +181,29 @@ nav .logo img {
   color: #081c24;
   font-weight: 300;
 }
-.container .content .movies-category a {
+.container .content .movies-category span {
   right: 0;
   font-size: 12px;
   letter-spacing: 0.5px;
   margin-top: 5px;
+  font-size: 10px;
 }
-.container .content .movies-category a .fa-arrow-right {
-  font-size: 8px;
-  line-height: 2px;
-  font-weight: 600;
+.container .content .load {
+  display: block;
+  align-self: center;
+  padding: 0px 20px 45px 20px;
+}
+.container .content button {
+  display: inline-flex;
+  color: #081c24;
+  font-size: 12px;
+  padding: 8px 15px;
+  background: transparent;
+  border: 1px solid #081c24;
+}
+.container .content button:hover {
+  background: #081c24;
+  color: white;
 }
 .container .content .movies {
   display: flex;
@@ -188,16 +215,31 @@ nav .logo img {
   flex-wrap: wrap;
   padding-left: 0px;
   margin-top: 0px;
+  width: 100%;
 }
 .container .content .movies ul li {
   padding: 30px;
+  width: 20%;
+  margin-left: 0px;
+  box-sizing: border-box;
 }
-.container .content .movies ul li figure {
+.container .content .movies ul li a {
+  float: left;
+}
+.container .content .movies ul li a figure {
   margin: 0;
 }
-.container .content .movies ul li figure img {
-  width: 170px;
-  height: 256px;
+.container .content .movies ul li a figure img {
+  width: 100%;
+  float: left;
+}
+.container .content .movies ul li a figure img:hover {
+  transform: scale(1.03) translateZ(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  box-shadow: 2px 3px 24px 3px #c9c7c9;
+}
+.container .content .movies .title {
+  display: inline-flex;
 }
 
 /*# sourceMappingURL=styles2.css.map */

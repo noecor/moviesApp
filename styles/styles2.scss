@@ -37,6 +37,10 @@ nav{
         img{
             width: 45px;
             height: 40px;
+            &:hover{
+                transform: scale(1.05) translateZ(0);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
         }
     }
 }
@@ -68,7 +72,6 @@ nav{
             justify-content: center;
             font-weight: 300;
             text-decoration: none;
-            text-transform: uppercase;
             letter-spacing: .5px;
             color: #999;
             position: relative;
@@ -100,6 +103,13 @@ nav{
     left: 95px;
     background: #fff;
     z-index: 5;
+    .results{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        margin-left: 35px;
+        margin-top: 50px;
+    }
     .search{
         width: 18px;
         height: 18px;
@@ -120,7 +130,6 @@ nav{
     margin-left: 95px;
     margin-top: 75px;
     width: calc(100% - 95px);
-    //padding-left: 95px;
 
     .header{
         width:100%;
@@ -155,12 +164,16 @@ nav{
 }
 
 .content{
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
 .movies-category{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 30px;
+    padding-top: 30px;
     line-height: 10px;
     h2{
         margin: 0;
@@ -168,16 +181,29 @@ nav{
         color: #081c24;
         font-weight: 300;
     }
-    a{
+    span{
         right: 0;
         font-size: 12px;
         letter-spacing: .5px;
         margin-top: 5px;
-        .fa-arrow-right{
-            font-size: 8px;
-            line-height: 2px;
-            font-weight: 600;
-        }
+        font-size: 10px;
+    }
+}
+.load{
+    display: block;
+    align-self: center;
+    padding: 0px 20px 45px 20px;
+}
+button{
+    display: inline-flex;
+    color: #081c24;
+    font-size: 12px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid #081c24;
+    &:hover{
+        background: #081c24;
+        color: white;
     }
 }
 .movies{
@@ -189,16 +215,33 @@ nav{
         flex-wrap: wrap;
         padding-left: 0px;
         margin-top: 0px;
+        width: 100%;
         li{
             padding: 30px;
+            width: 20%;
+            margin-left: 0px;
+            box-sizing: border-box;
+
+            a{
+                float: left;
+            
         figure{
             margin: 0;
         img{
-            width: 170px;
-            height: 256px;
-            }
+            width: 100%;
+            float: left;  
+            &:hover{
+                transform: scale(1.03) translateZ(0);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                box-shadow: 2px 3px 24px 3px rgba(201,199,201,1);            }
+        }
+        }
     }
     }
+    }
+    .title{
+        display: inline-flex;
+        //float: left;
     }
 }
 }

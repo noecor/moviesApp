@@ -22,63 +22,39 @@
     </nav>
     <div class="placeholder">
             <i class="fas fa-search search"></i>
-            <input type="text" id="searchBox" placeholder="Search for a movie..." onkeyup="search()">
-            <ul id="results" class="results"></ul>
+            <input type="text" placeholder="Search for a movie...">
         </div>
     <div class="container">
-        <div class="header">
-            <h1>THE MOVIE DB APP</h1>
-            <div class="banner">
-            </div>
-        </div>
         <div class="content">
             <div class="movies-category">
                 <h2>Popular Movies</h2> 
-                <a href="#">View All <i class="fas fa-arrow-right"></i></a> 
+                <span>10.000 results</span>
             </div>
             <div class="movies">
-                    <ul id="popular-movies">
+                    <ul>
+                        <li><a href="#"><figure><img class="zoom" src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
                         <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
-                        <li><a href="#"><figure><img src="images/assets/peli2.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">itulo película</p></a></li>
                         <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">itulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
+                        <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">itulo película</p></a></li>
                         <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
                         <li><a href="#"><figure><img src="images/assets/pelicula.jpg"></figure><p class="title">Titulo película</p></a></li>
                     </ul>
             </div>
+            <div class="load">
+                <button>LOAD MORE</button>
+            </div>
 
         </div>
+        
     </div>
-
-    <script>
-        let lastRequest;
-        let api_key = '3631da5fba4115a4ce320e971a2fdadb';
-
-
-        const search = () => {
-	    let query = event.target.value;
-	        if (query.length >= 3 || (event.keyCode === 13 && query !== lastRequest)) {
-		lastRequest = query;
-		fetch(`https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}`)
-			.then((res) => res.json())
-			.then((res) => printQueryResults(res.results));
-	        }
-        };
-
-        const printQueryResults = (movies) => {
-	    const container = document.getElementById('results');
-	    container.innerHTML = '';
-
-	    movies.forEach((mov) => {
-		let movie = document.createElement('a');
-		let title = mov.title === mov.original_title ? mov.title : `${mov.title} (${mov.original_title})`;
-		movie.innerText = title;
-		movie.href = '#';
-		movie.onclick = () => openModal(mov);
-		container.appendChild(movie);
-	        });
-        };
-
-    </script>
 </body>
 </html>
-
