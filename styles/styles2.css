@@ -229,11 +229,12 @@ nav .logo img:hover {
 .container .content .movies ul li a figure {
   margin: 0;
 }
-.container .content .movies ul li a figure img {
+.container .content .movies ul li a figure .thumb {
   width: 100%;
+  margin-bottom: 16px;
   float: left;
 }
-.container .content .movies ul li a figure img:hover {
+.container .content .movies ul li a figure .thumb:hover {
   transform: scale(1.03) translateZ(0);
   transition: opacity 0.5s ease, transform 0.5s ease;
   box-shadow: 2px 3px 24px 3px #c9c7c9;

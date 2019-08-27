@@ -227,13 +227,15 @@ button{
             
         figure{
             margin: 0;
-        img{
+        .thumb{
             width: 100%;
+            margin-bottom:16px;
             float: left;  
             &:hover{
                 transform: scale(1.03) translateZ(0);
                 transition: opacity 0.5s ease, transform 0.5s ease;
-                box-shadow: 2px 3px 24px 3px rgba(201,199,201,1);            }
+                box-shadow: 2px 3px 24px 3px rgba(201,199,201,1);            
+            }
         }
         }
     }
