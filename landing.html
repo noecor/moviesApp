@@ -20,20 +20,20 @@
             <li class="navigation-item"><a href="#" onclick="searchCategory('now_playing')"><i class="far fa-play-circle"></i><span>NOW PLAYING</span></a></li>
         </ul>
     </nav>
-    <div class="placeholder">
+    <div class="placeholder" id="search">
         <i class="fas fa-search search"></i>
             <input type="text" placeholder="Search for a movie...">
         </div>
     <div class="container">
-        <div class="header">
+        <div class="header" id="mainImage">
             <h1>THE MOVIE DB APP</h1>
             <div class="banner">
             </div>
         </div>
         <div class="content">
             <div class="movies-category" id="categories-results">
-                <h2 id="title">Popular Movies</h2> 
-                <a href="#">View All <i class="fas fa-arrow-right"></i></a> 
+                <h2 id="title"></h2> 
+                <a href="#" onclick="hideElement()" id="viewAll">View All <i class="fas fa-arrow-right"></i></a> 
             </div>
             <div class="movies" id="movies">
                 <ul>

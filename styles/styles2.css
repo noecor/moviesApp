@@ -146,6 +146,10 @@ body .close {
   cursor: pointer;
 }
 
+body .displayNone {
+  display: none;
+}
+
 body a {
   color: #999;
   text-decoration: none;

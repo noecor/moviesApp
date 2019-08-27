@@ -4,7 +4,7 @@ const page = 1;
 const url = `https://image.tmdb.org/t/p/original`;
 const body = document.querySelector('body');
 
- 
+//recibe categoria por parámetro e imprime resultados por categoria. Se llama a la función con onclick.
 const searchCategory = (category) => {
     let title = document.getElementById("title");
     switch (category) {
@@ -26,8 +26,8 @@ const searchCategory = (category) => {
 		.then((res) => printCategoryResults(res.results));
 };
 
+//imprime los resultados de la categoría y las muestra en una link por cada una.
 const printCategoryResults = (movies) => {
-    console.log('se ejecutó')
     let container = document.getElementById('movies');
     container.classList.add('movies')
     container.innerHTML = '';
@@ -40,24 +40,24 @@ const printCategoryResults = (movies) => {
             <div class="tituloPeli"  onclick="openModal(${mov.id})">${mov.title}</div>
             </li>`;
         container.appendChild(movie);
-        console.log(mov.title);
 	});
 };
 
-
+//abre el modal con las características de cada película.
 const openModal = id =>{
     fetch (`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`)
         .then(res => res.json())
         .then(movie => { 
 
+            const genres = movie.genres.map(e=>e.name).join('/');
+
+            let search = document.getElementById('search');
+            search.style.display = "none";
+
             const contenedor = document.createElement('div');
-            const genres = movie.genres.map(e=>e.name).join('/')
-
-            contenedor.classList.add('modal')
-            
             contenedor.innerHTML = `
+            <div class="modal" id="modal">
             <div class="spinner"></div>
-
             <div class="contenedorModal noVisible">
             <div class="modalEncabezado" style="background-image: url(${url}${movie.backdrop_path})" width="100px"></div>
             <div class="modalInformacion"></div>
@@ -78,7 +78,7 @@ const openModal = id =>{
 
                 </div>
             </div>
-            <div class="cerrar" onclick= "cerrarModal()">
+            <div class="close" onclick= "closeModal()">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" 
                 data-icon="times" class="svg-inline--fa fa-times fa-w-11" 
                 role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512">
@@ -89,9 +89,26 @@ const openModal = id =>{
                  12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 
                  0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
             </div>
+            </div>
             </div>`
 
-
         body.appendChild(contenedor);
+        
     })
 };
+
+//función para cerrar el modal.
+const closeModal = () =>{
+    const contenedor = document.getElementById('modal');
+    contenedor.remove('modal');
+    let search = document.getElementById('search');
+    search.style.display = "flex";
+}
+
+//función para esconder elementos.
+const hideElement = () =>{
+    let elem = document.getElementById('mainImage');
+    elem.style.display = "none";
+    let elem2 = document.getElementById('viewAll');
+    elem2.style.display ="none";
+}
