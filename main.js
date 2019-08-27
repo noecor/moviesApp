@@ -37,7 +37,7 @@ const printCategoryResults = (movies) => {
         movie.innerText = mov.title;
         movie.innerHTML = `<li class="pelis">
             <div class="imagen" onclick="openModal(${mov.id})"><img src="${url}${mov.poster_path}" width="80px"/></div>
-            <div class="tituloPeli"  onclick="openModal(${mov.id})">${mov.title}</div>
+            <div class=""  onclick="openModal(${mov.id})">${mov.title}</div>
             </li>`;
         container.appendChild(movie);
 	});
@@ -60,15 +60,14 @@ const openModal = id =>{
             const container = document.createElement('div');
             container.innerHTML = `
             <div class="modal" id="modal">
-            <div class="spinner"></div>
-            <div class="contenedorModal noVisible">
-            <div class="modalEncabezado" style="background-image: url(${url}${movie.backdrop_path})" width="200px"></div>
-            <div class="modalInformacion"></div>
-            <div class="contenedorModalInfo">
+            <div class="">
+            <div class="modalHeader" style="background-image: url(${url}${movie.backdrop_path})" width="200px"></div>
+            <div class="modalInfo"></div>
+            <div class="containerrModalInfo">
                 <div class="modalPoster">
                     <img src="${url}${movie.poster_path}" width="300px"/>
                 </div>
-                <div class="modalInformacionPeli">
+                <div class="modalInfoMovie">
                     <h4>${movie.title}</h4>
                     <p>${movie.tagline}</p>
                     <div class="masInfo">
