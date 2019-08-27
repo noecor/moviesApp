@@ -20,9 +20,10 @@
             <li class="navigation-item"><a href="#" onclick="searchCategory('now_playing')"><i class="far fa-play-circle"></i><span>NOW PLAYING</span></a></li>
         </ul>
     </nav>
-    <div class="placeholder" id="search">
+    <div class="placeholder" id="search" onkeyup="search()">
         <i class="fas fa-search search"></i>
             <input type="text" placeholder="Search for a movie...">
+            <ul id="results" class="results"></ul>
         </div>
     <div class="container">
         <div class="header" id="mainImage">

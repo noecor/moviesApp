@@ -51,14 +51,14 @@ const openModal = id =>{
 
             const genres = movie.genres.map(e=>e.name).join('/');
 
-            let search = document.getElementById('search');
-            search.style.display = "none";
+            let searchBar = document.getElementById('search');
+            searchBar.style.display = "none";
             let mainText = document.getElementById('mainText');
             mainText.style.display = "none";
 
 
-            const contenedor = document.createElement('div');
-            contenedor.innerHTML = `
+            const container = document.createElement('div');
+            container.innerHTML = `
             <div class="modal" id="modal">
             <div class="spinner"></div>
             <div class="contenedorModal noVisible">
@@ -95,17 +95,17 @@ const openModal = id =>{
             </div>
             </div>`
 
-        body.appendChild(contenedor);
+        body.appendChild(container);
         
     })
 };
 
 //función para cerrar el modal.
 const closeModal = () =>{
-    const contenedor = document.getElementById('modal');
-    contenedor.remove('modal');
-    let search = document.getElementById('search');
-    search.style.display = "flex";
+    const container = document.getElementById('modal');
+    container.remove('modal');
+    let searchBar = document.getElementById('search');
+    searchBar.style.display = "flex";
     let mainText = document.getElementById('mainText');
     mainText.style.display = "block";
 }
@@ -117,3 +117,28 @@ const hideElement = () =>{
     let elem2 = document.getElementById('viewAll');
     elem2.style.display ="none";
 }
+
+//función que busca películas con las letras ingresadas.
+let lastRequest;
+const search = () => {
+let query = event.target.value;
+    if (query.length >= 3 || (event.keyCode === 13 && query !== lastRequest)) {
+lastRequest = query;
+fetch(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`)
+    .then((res) => res.json())
+    .then((res) => printQueryResults(res.results));
+    }
+};
+//imprime los resultados de la búsqueda
+const printQueryResults = (movies) => {
+const container = document.getElementById('results');
+container.innerHTML = '';
+movies.forEach((mov) => {
+let movie = document.createElement('a');
+let title = mov.title === mov.original_title ? mov.title : `${mov.title} (${mov.original_title})`;
+movie.innerText = title;
+movie.href = '#';
+movie.onclick = () => openModal(mov.id);
+container.appendChild(movie);
+    });
+};

@@ -150,6 +150,14 @@ body .displayNone {
   display: none;
 }
 
+body ul {
+  display: inline;
+}
+
+body .results {
+  display: block;
+}
+
 body a {
   color: #999;
   text-decoration: none;
