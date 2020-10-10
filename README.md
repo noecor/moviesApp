@@ -1,4 +1,4 @@
-Consigna tp:
-https://github.com/Ada-IT/bootcamp-frontend/tree/master/trabajos-practicos/tp-3
+Proyecto realizado en JavaScript Vainilla.
+Puedes ver el resultado final aquí: https://noecor.github.io/moviesApp/.
 
 
